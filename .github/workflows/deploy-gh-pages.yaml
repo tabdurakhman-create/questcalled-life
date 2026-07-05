@@ -26,6 +26,8 @@ jobs:
           node-version: 22
       - name: Install Dependencies
         run: npm ci
+      - name: Sync Quartz Plugins
+        run: npx quartz sync --commit false --push false --pull false
       - name: Build Quartz
         run: npx quartz build
       - uses: actions/configure-pages@v5
