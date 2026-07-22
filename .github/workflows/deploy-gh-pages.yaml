@@ -26,6 +26,8 @@ jobs:
           node-version: 22
       - name: Install Dependencies
         run: npm ci
+      - name: Update section stats
+        run: node scripts/update-index-stats.mjs
       - name: Sync Quartz Plugins
         run: npx quartz plugin install
       - name: Build Quartz
